@@ -9,6 +9,9 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 
 from docx import Document
 
+if 'key' not in st.session_state:
+    st.session_state.key = 0
+
 # Configuration
 api_key = st.secrets['google_api_key']
 st.set_page_config(page_title="TM Report Automation", layout="wide")
@@ -26,6 +29,8 @@ def get_data():
 MODEL_NAME = "gemini-2.5-flash-preview-04-17"
 llm = ChatGoogleGenerativeAI(model=MODEL_NAME, google_api_key=api_key, convert_system_message_to_human=True)#GooglePalm()
 
+
+@st.cache_data
 def generate_tm_report(alert: dict, extra_sections=None) -> dict:
     template = """
 Alert ID: {alert_id}
@@ -77,7 +82,7 @@ Generate a Transaction Monitoring report draft with the following sections:
     return sections
 
 # Streamlit UI
-st.title('TM Report Automation POC')
+st.title('TM Report Automation')
 
 data = get_data()
 alert_ids = data['alert_id'].tolist()
@@ -96,7 +101,7 @@ extra_sections_input = st.sidebar.text_area(
 )
 extra_sections = [s.strip() for s in extra_sections_input.split('\n') if s.strip()]
 
-if st.sidebar.button('Generate Draft'):
+if st.sidebar.button('Generate Draft') or st.session_state.key == 0:
     report = generate_tm_report(alert, extra_sections=extra_sections)
     # Editable sections
     summary = report['summary']
@@ -153,3 +158,4 @@ if st.sidebar.button('Generate Draft'):
         file_name=f'TM_Report_{selected_id}.docx',
         mime='application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     )
+    st.session_state.key = 1
