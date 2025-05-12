@@ -1,0 +1,21 @@
+alert_id,transaction_date,amount,currency,sender_account,receiver_account,rule_triggered,description,prior_alerts_count,prior_ed_completed,client_risk_rating,jurisdiction_risk,client_id
+A001,2025-05-01,12500.00,USD,AC123456,RC654321,Rule-001,Multiple small transactions aggregated,2,True,Medium,High,C1001
+A002,2025-05-02,500000.00,EUR,AC234567,RC765432,Rule-010,Large wire transfer to high-risk country,0,False,High,Very High,C1002
+A003,2025-04-28,2500.00,USD,AC345678,RC876543,Rule-003,Unusual transaction pattern,1,True,Low,Medium,C1003
+A004,2025-05-03,75000.00,GBP,AC456789,RC987654,Rule-007,Suspicious high-value purchase,3,True,High,High,C1004
+A005,2025-05-04,1500.00,USD,AC567890,RC098765,Rule-002,Repeated round-dollar amounts,0,False,Medium,Low,C1005
+A006,2025-05-05,32000.00,JPY,AC678901,RC109876,Rule-011,Cross-border transaction spike,1,False,High,Medium,C1006
+A007,2025-04-30,980.00,USD,AC789012,RC210987,Rule-005,First-time transfer to unknown receiver,0,False,Medium,Medium,C1007
+A008,2025-05-06,450000.00,USD,AC890123,RC321098,Rule-010,Multiple high-value wires,5,True,Very High,Very High,C1008
+A009,2025-05-02,12000.00,EUR,AC901234,RC432109,Rule-004,Structuring activity detected,2,True,High,High,C1009
+A010,2025-05-07,600.00,USD,AC012345,RC543210,Rule-008,Unusual merchant code,0,False,Low,Low,C1010
+A011,2025-05-01,200000.00,GBP,AC112345,RC653210,Rule-012,Round-dollar large amount,1,True,High,High,C1011
+A012,2025-05-08,7200.00,USD,AC122345,RC763210,Rule-006,Multiple ATM withdrawals,2,False,Medium,Medium,C1012
+A013,2025-05-03,150000.00,EUR,AC132345,RC873210,Rule-009,Transfer flagged by screening,4,True,Very High,Very High,C1013
+A014,2025-05-04,3300.00,USD,AC142345,RC983210,Rule-003,Irregular timing of payments,1,True,Low,Medium,C1014
+A015,2025-05-09,14000.00,EUR,AC152345,RC093210,Rule-001,Aggregation of sub-threshold,0,False,Medium,High,C1015
+A016,2025-05-10,27000.00,GBP,AC162345,RC193210,Rule-007,High-value goods purchase,0,False,High,High,C1016
+A017,2025-05-05,830.00,USD,AC172345,RC293210,Rule-005,New payee with no history,0,False,Medium,Medium,C1017
+A018,2025-05-06,54000.00,USD,AC182345,RC393210,Rule-011,Spike in outgoing transfers,3,True,High,Medium,C1018
+A019,2025-05-07,1100.00,EUR,AC192345,RC493210,Rule-002,Repeated rounding patterns,2,False,Medium,Low,C1019
+A020,2025-05-08,97000.00,GBP,AC202345,RC593210,Rule-012,High round-dollar transfer,1,True,High,High,C1020
