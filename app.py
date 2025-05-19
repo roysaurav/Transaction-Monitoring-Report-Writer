@@ -101,7 +101,7 @@ extra_sections_input = st.sidebar.text_area(
 )
 extra_sections = [s.strip() for s in extra_sections_input.split('\n') if s.strip()]
 
-if st.sidebar.button('Generate Draft') or st.session_state.key == 0:
+if st.sidebar.button('Generate Draft', type="primary") or st.session_state.key == 0:
     report = generate_tm_report(alert, extra_sections=extra_sections)
     # Editable sections
     summary = report['summary']
@@ -156,6 +156,7 @@ if st.sidebar.button('Generate Draft') or st.session_state.key == 0:
         label='Download Report as Word',
         data=buffer,
         file_name=f'TM_Report_{selected_id}.docx',
-        mime='application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        mime='application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        type="primary"
     )
     st.session_state.key = 1
