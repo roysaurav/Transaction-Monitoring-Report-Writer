@@ -26,7 +26,7 @@ def get_data():
     return load_data('sample_data.csv')
 
 # Initialize LLM
-MODEL_NAME = "gemini-2.5-flash-preview-04-17"
+MODEL_NAME = "gemini-2.5-flash"
 llm = ChatGoogleGenerativeAI(model=MODEL_NAME, google_api_key=api_key, convert_system_message_to_human=True)#GooglePalm()
 
 
